@@ -45,7 +45,7 @@ export interface PeriodicElement {
 const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 1,
-    name: 'Hydrogen',
+    name: 'Users Permissions',
     weight: 1.0079,
     symbol: 'H',
     permissions: [
@@ -53,6 +53,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
       {id: 'ag2sa12as', name: 'Update User'},
       {id: 'ag2sa12as', name: 'Delete User'},
       {id: 'ag2sa12as', name: 'Assign User'},
+    ]
+  },
+
+  {
+    position: 2,
+    name: 'Clients Permissions',
+    weight: 1.0079,
+    symbol: 'H',
+    permissions: [
+      {id: 'ag2sa12as', name: 'Create Client'},
+      {id: 'ag2sa12as', name: 'Update Client'},
+      {id: 'ag2sa12as', name: 'Delete Client'},
+      {id: 'ag2sa12as', name: 'Assign Client'},
     ]
   }
 ];

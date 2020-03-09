@@ -20,7 +20,7 @@ export class ListPermissionsResolver implements Resolve<any>, OnDestroy{
         return new Promise<any>(async (resolve, reject) => {
 
                 this.permissionService.getPermissionsList(0, 10)
-                   // .pipe(takeUntil(this._unsubscribeAll))
+                    .pipe(takeUntil(this._unsubscribeAll))
                     .subscribe(
                         results => {
                             resolve(results.data.getPermissionsList);

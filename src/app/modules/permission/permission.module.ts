@@ -6,6 +6,7 @@ import { PermissionListComponent } from './pages/permission-list/permission-list
 import {MatBadgeModule, MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatIconModule, MatListModule, MatTableModule, MatTreeModule} from '@angular/material';
 import {SharedModule} from '../../shared/shared.module';
 import {FlexModule} from '@angular/flex-layout';
+import {ListPermissionsResolver} from './resolvers/list-permissions.resolver';
 
 @NgModule({
   declarations: [PermissionListComponent],
@@ -22,6 +23,9 @@ import {FlexModule} from '@angular/flex-layout';
         MatCheckboxModule,
         MatButtonModule,
         MatBadgeModule
+    ],
+    providers: [
+        ListPermissionsResolver
     ]
 })
 export class PermissionModule { }

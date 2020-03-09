@@ -11,10 +11,10 @@ export const environment = {
     users: User,
 
 
-      apiUrl: 'https://api.galdierirents.info'
+      // apiUrl: 'https://api.galdierirents.info'
 
        // apiUrl: 'http://localhost:3333'
-     // apiUrl: 'http://localhost:4106'
+     apiUrl: 'http://localhost:4206'
 };
 
 // export let storageUser: User = { username: 'init' };

@@ -45,3 +45,13 @@ tr.example-element-row:not(.example-expanded-row):active {
 .example-element-description-attribution {
   opacity: 0.5;
 }
+
+.main{
+  display: none;
+}
+
+td{
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}

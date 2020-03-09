@@ -2,7 +2,7 @@
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
     <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <th class="main" mat-header-cell *matHeaderCellDef> {{column}} </th>
         <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
     </ng-container>
 
@@ -20,21 +20,30 @@
                 </div>
 
                     <table>
-                           <thead>
-                                <th>Permission Id</th>
-                                <th> Permission Name</th>
-                           </thead>
 
+                       <thead>
+                            <th>Permission Id</th>
+                            <th> Permission Name</th>
+                       </thead>
 
-                        <div class="" *ngFor="let permission of element.permissions">
-                        <tr>
+                        <tbody>
 
+                        <tr *ngFor="let permission of element.permissions">
+
+                            <td> {{permission.id}} </td>
+
+                            <td> {{permission.name}} </td>
 
 
                         </tr>
 
+                        </tbody>
+
+
+
+
                     </table>
-                </div>
+
 
             </div>
         </td>
