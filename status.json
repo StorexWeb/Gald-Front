@@ -1,0 +1,344 @@
+[
+    {
+        "id": "1",
+        "nome": "richiesta_preventivo",
+        "descrizione": "la richiesta di preventivo Ã¨ stata soltanto caricata nel sistema",
+        "ruoli_che_leggono": "['lng_prev']"
+    },
+    {
+        "id": "2",
+        "nome": "creazione_preventivo",
+        "descrizione": "lâoperatore sta lavorando la richiesta per generare il preventivo",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "3",
+        "nome": "preventivo_inoltrato",
+        "descrizione": "il preventivo Ã¨ stato creato ed Ã¨ stato allegato alla richiesta di preventivo ",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "4",
+        "nome": "attesa_accettazione_cliente",
+        "descrizione": "il preventivo Ã¨ stato stampato ed Ã¨ in attesa della decisione del cliente",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "5",
+        "nome": "rifiutato_dal_cliente",
+        "descrizione": "il preventivo Ã¨ stato rifiutato dal cliente e quindi viene accantonato come registro storico",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "6",
+        "nome": "preventivo_accettato",
+        "descrizione": "il preventivo Ã¨ stato accettato dal cliente",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "7",
+        "nome": "attesa_documenti",
+        "descrizione": "siamo in attesa dei documenti del cliente da allegare al preventivo",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "8",
+        "nome": "documenti_ricevuti",
+        "descrizione": "il venditore ha allegato tutti i documenti obbligatori",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "9",
+        "nome": "pratica_caricata",
+        "descrizione": "la pratica Ã¨ stata caricata nel gestionale della casa locatrice e si attende lâesito",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "10",
+        "nome": "rifiutata_da_locatrice",
+        "descrizione": "la pratica Ã¨ stata rifiutata dalla casa locatrice",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "11",
+        "nome": "condizionata_da_locatrice",
+        "descrizione": "la pratica verrÃ  approvata dalla casa locatrice soltanto se il cliente accetta determinate condizioni",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "12",
+        "nome": "approvata_da_locatrice",
+        "descrizione": "la pratica Ã¨ stata approvata dalla casa locatrice",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "13",
+        "nome": "pratica_in_gestione",
+        "descrizione": "la pratica si trova nello stato in gestione, in attesa della lavorazione successiva",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "14",
+        "nome": "invio_ordine",
+        "descrizione": "l ordine del veicolo Ã¨ stato inviato",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "15",
+        "nome": "arrivo_veicolo",
+        "descrizione": "il veicolo Ã¨ arrivato",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "16",
+        "nome": "in_preparazione",
+        "descrizione": "il veicolo Ã¨ in preparazione",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "17",
+        "nome": "da_consegnare",
+        "descrizione": "il veicolo Ã¨ in attesa di essere consegnato",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "18",
+        "nome": "conclusa",
+        "descrizione": "la pratica Ã¨ conclusa",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "19",
+        "nome": "pratica_appoggiata",
+        "descrizione": "si tratta di una pratica appoggiata",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "20",
+        "nome": "richiesta_rigettata",
+        "descrizione": "la richiesta di preventivo Ã¨ stata rigettata perchÃ© non Ã¨ stato possibile generare un preventivo",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "21",
+        "nome": "rent",
+        "descrizione": "la pratica Ã¨ stata approvata e sono stati allegati alcuni file dal venditore",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "22",
+        "nome": "rent_caricata",
+        "descrizione": "gli allegati sono stati scaricati dal backoffice e il rent Ã¨ stato caricato",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "23",
+        "nome": "anagrafica_bloccata",
+        "descrizione": "anagrafica del cliente bloccata dalla casa locatrice",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "24",
+        "nome": "attesa_cliente_effettivo",
+        "descrizione": "Il cliente Ã¨ in attesa di essere reso effettivo",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "25",
+        "nome": "cliente_effettivo",
+        "descrizione": "Il cliente Ã¨ stato reso effettivo",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "26",
+        "nome": "richiesta_rent",
+        "descrizione": "Il venditore ha richiesto RENT",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "27",
+        "nome": "sviluppa_rent",
+        "descrizione": "Il venditore ha sviluppato RENT",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "28",
+        "nome": "richiesta_rent_espletata",
+        "descrizione": "Il backoffice ha espletato la richiesta di RENT",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "29",
+        "nome": "sviluppo_rent_espletato",
+        "descrizione": "Il backoffice ha espletato lo sviluppo  RENT",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "30",
+        "nome": "condizione_gestita",
+        "descrizione": "Il venditore ha gestito la pratica precedentemente condizionata dalla casa locatrice",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "31",
+        "nome": "richiesta_commissioni",
+        "descrizione": "il venditore ha richiesto le commissioni su questa pratica",
+        "ruoli_che_leggono": "['lng_amm']"
+    },
+    {
+        "id": "32",
+        "nome": "commissioni_accettate",
+        "descrizione": "l amministratore ha deciso di accettare le commissioni su questa pratica",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "33",
+        "nome": "commissioni_condizionate",
+        "descrizione": "l amministratore vuole che si rispettino determinate condizioni per attivare le commissioni",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "34",
+        "nome": "commissioni_rifiutate",
+        "descrizione": "l amministratore ha deciso di rifiutare la richiesta di commissioni",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "35",
+        "nome": "preventivo_alternativo",
+        "descrizione": "Questo preventivo Ã¨ stato generato dalla copia di una richiesta precedente ed Ã¨ stato associato un preventivo di una casa locatrice diversa da quella iniziale",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "36",
+        "nome": "rent_rifiutata",
+        "descrizione": "la rent Ã¨ stata rifiutata dal back office",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "37",
+        "nome": "cliente_effettivo_rifiutato",
+        "descrizione": "il cliente non Ã¨ stato reso effettivo",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "38",
+        "nome": "gestito_dopo_rent_rifiutata",
+        "descrizione": "La pratica Ã¨ stata gestita dal venditore dopo che la rent Ã¨ stata rifiutata",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "39",
+        "nome": "richiesta_ripristinata_dopo_rigettata",
+        "descrizione": "il venditore ha ripristinato la richiesta dopo che essa Ã¨ stata rigettata",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "40",
+        "nome": "richiesta_rigettata_dal_venditore",
+        "descrizione": "il venditore ha rigettato la richiesta",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "41",
+        "nome": "pratica_cestinata_dal_venditore",
+        "descrizione": "il venditore ha cestinato la pratica",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "42",
+        "nome": "pratica_ripristinata_dopo_cestinata",
+        "descrizione": "il venditore ha ripristinato la pratica cestinata in precedenza",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "43",
+        "nome": "gestito_dopo_cliente_effettivo_rifiutato",
+        "descrizione": "il venditore ha gestito di nuovo la rent di cui precedentemente era stato rifiutato il cliente effettivo",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "44",
+        "nome": "cliente_effettivo",
+        "descrizione": "Il cliente Ã¨ stato reso effettivo",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "45",
+        "nome": "attesa_cliente_effettivo",
+        "descrizione": "Il cliente Ã¨ in attesa di essere reso effettivo",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "46",
+        "nome": "rent_in_creazione",
+        "descrizione": "Il venditore ha stampato RENT",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "47",
+        "nome": "preventivo_rapido_cliente_inserito",
+        "descrizione": "Preventivo rapido cliente inserito",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "48",
+        "nome": "preventivo_rapido_documenti_inseriti",
+        "descrizione": "Preventivo rapido documenti inseriti",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "49",
+        "nome": "preventivo_rapido_creazione_preventivo",
+        "descrizione": "Preventivo rapido creazione preventivo",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "50",
+        "nome": "preventivo_rapido_anagrafica_bloccata",
+        "descrizione": "anagrafica del cliente bloccata dalla casa locatrice su preventivo rapido",
+        "ruoli_che_leggono": "['lng_back']"
+    },
+    {
+        "id": "51",
+        "nome": "richiesta_rigettata_preventivo_rapido",
+        "descrizione": "la richiesta di preventivo rapido Ã¨ stata rigettata perchÃ© non Ã¨ stato possibile generare un preventivo",
+        "ruoli_che_leggono": "['lng_vend','lng_point','lng_capo_point']"
+    },
+    {
+        "id": "52",
+        "nome": "preventivo_definitivo",
+        "descrizione": "Preventivo definitivo",
+        "ruoli_che_leggono": "['lng_prev']"
+    },
+    {
+        "id": "53",
+        "nome": "preventivo_definitivo_accettato",
+        "descrizione": "Preventivo definitivo accettato",
+        "ruoli_che_leggono": "['lng_prev']"
+    },
+    {
+        "id": "54",
+        "nome": "preventivo_da_adeguare",
+        "descrizione": "Preventivo da adeguare",
+        "ruoli_che_leggono": "['lng_prev']"
+    },
+    {
+        "id": "55",
+        "nome": "preventivo_adeguato",
+        "descrizione": "Preventivo adeguato",
+        "ruoli_che_leggono": "['lng_prev']"
+    },
+    {
+        "id": "56",
+        "nome": "pratica_da_adeguare",
+        "descrizione": "Pratica da adeguare",
+        "ruoli_che_leggono": "['lng_prev']"
+    },
+    {
+        "id": "57",
+        "nome": "pratica_adeguata",
+        "descrizione": "Pratica adeguata",
+        "ruoli_che_leggono": "['lng_prev']"
+    }
+]

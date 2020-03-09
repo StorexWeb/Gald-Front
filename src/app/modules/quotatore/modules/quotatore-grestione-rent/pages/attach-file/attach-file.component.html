@@ -1,0 +1,100 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayout.xs="column">
+        <div fxFlex="50">
+            <div class="page-layout carded fullwidth" style="margin-top: 5%">
+                <div class="center">
+                    <ng-container *ngFor="let offer of offers_ids; let idx = index">
+                        <ng-container [ngTemplateOutlet]="offerTemplate" [ngTemplateOutletContext]="{offer:offer, idx: idx}"></ng-container>
+                    </ng-container>
+                    <div class="action-buttons-container">
+
+                        <button mat-raised-button type="submit" class="submit-button" (click)="submit()">Submit</button>
+
+                        <button *ngIf="from == 0" mat-raised-button color="primary" class="add-offer-button mr-4" (click)="addOffer()">Add Offer</button>
+                        <div class="clear-both"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Offer Template -->
+<ng-template let-offer="offer" let-idx="idx" #offerTemplate>
+    <div class="content-card offer-card">
+        <div class="toolbar px-24 py-8">
+            <span class="flex-1"><i class="material-icons">note</i> Preventivo <b>Ufficiale</b></span>
+            <div *ngIf="idx" class="delete-offer" (click)="removeOffer(offer)"><mat-icon>delete</mat-icon></div>
+        </div>
+        <div class="p-16">
+            <div class="h2">Seleziona il file PDF preventivo da allegare alla richiesta
+            </div>
+        </div>
+        <table class="simple clickable">
+            <tr>
+
+                <!--                <td><input type="file" [multiple]="false"  (change)="changeFiles($event, offer)" multiple></td>-->
+
+                <td><app-fileinput [multiple]="false" [save_btn]="false" [deleted]="false" (onChange)="changeFiles($event, offer)"></app-fileinput></td>
+                <td>
+                    <div fxLayout="column" fxLayoutAlign="start center" fxFill>
+                    <form [formGroup]="form[offer]">
+<!--                        <div fxFill >-->
+<!--                            <mat-form-field appearance="outline" fxFill style="width: 228px">-->
+<!--                                <mat-label>Casa locatrice di preferenza</mat-label>-->
+<!--                                <mat-select formControlName="lessor_location" name="lessor_location" placeholder="lessor location" >-->
+<!--                                    <mat-option *ngFor="let oM of options_CL" [value]="oM" (change)="changeClient($event)">-->
+<!--                                        {{oM}}-->
+<!--                                    </mat-option>-->
+<!--                                </mat-select>-->
+<!--                                <mat-icon matSuffix class="secondary-text">store_mall_directory</mat-icon>-->
+<!--                                <mat-error>Devi inserire questo campo!</mat-error>-->
+<!--                            </mat-form-field>-->
+<!--                        </div>-->
+
+
+<!--                        <div fxFill>-->
+<!--                            <mat-form-field appearance="outline" fxFill>-->
+<!--                                <mat-label>ID Casa locatrice</mat-label>-->
+<!--                                <input type="text" matInput placeholder="ID Casa locatrice" formControlName="idCasaLocatrice" name="idCasaLocatrice">-->
+<!--                                <mat-icon matSuffix class="secondary-text">store_mall_directory</mat-icon>-->
+<!--                                <mat-error>Devi inserire questo campo!</mat-error>-->
+<!--                            </mat-form-field>-->
+<!--                        </div>-->
+
+
+
+<!--                        <div fxFill>-->
+<!--                            <mat-form-field appearance="outline" fxFill>-->
+<!--                                <mat-label>Sconto</mat-label>-->
+<!--                                <input type="number" matInput placeholder="Sconto" formControlName="discount" name="discount">-->
+<!--                                <mat-icon matSuffix class="secondary-text">store_mall_directory</mat-icon>-->
+<!--                                <mat-error>Devi inserire questo campo!</mat-error>-->
+<!--                            </mat-form-field>-->
+<!--                        </div>-->
+
+                        <div fxFill>
+                            <mat-form-field appearance="outline" fxFill>
+                                <mat-label>Commissioni</mat-label>
+                                <input type="number" matInput placeholder="Commissioni" formControlName="commission" name="commission">
+                                <mat-icon matSuffix class="secondary-text">store_mall_directory</mat-icon>
+                                <mat-error>Devi inserire questo campo!</mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div fxFill>
+                            <mat-form-field appearance="outline" fxFill>
+                                <mat-label>Note</mat-label>
+                                <input type="text" matInput placeholder="note" formControlName="note" name="note">
+                                <mat-icon matSuffix class="secondary-text">store_mall_directory</mat-icon>
+                                <mat-error>Devi inserire questo campo!</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </form>
+                </div></td>
+            </tr>
+        </table>
+    </div>
+</ng-template>

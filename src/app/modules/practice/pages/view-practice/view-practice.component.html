@@ -1,0 +1,328 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" fxLayout.xs="column">
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------('view left practice')-------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <div style="margin-top: 10px;margin-bottom: 10px" fxFlex="50">
+        <div class="page-layout carded fullwidth">
+            <div class="center">
+                <div class="content-card">
+                    <div class="toolbar px-24 py-8">
+                        <span>
+                            <mat-icon matSuffix class="disabled-text">import_contacts</mat-icon>
+                            Pratica
+                        </span>
+                    </div>
+                    <div class="content p-24">
+                        <app-details [dataSource]="details"></app-details>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-------------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------('view right')-------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <div fxLayout="column" fxLayoutAlign="space-around stretch" style="margin-top: 10px;margin-bottom: 10px"
+         fxFlex="50">
+        <!-------------------------------------------------------------------------------------------------------------->
+        <!------------------------------------------------('storico')-------------------------------------------------------->
+        <!-------------------------------------------------------------------------------------------------------------->
+        <div class="page-layout carded fullwidth">
+            <div class="center">
+                <div class="content-card">
+                    <div class="toolbar px-24 py-8">
+                        <span>
+                            <mat-icon matSuffix class="disabled-text">access_time</mat-icon>
+                            Storico
+                        </span>
+                    </div>
+                    <div class="content p-24">
+                        <div class="card-preview">
+                            <div class="fuse-card" fxFill>
+                                <div style="overflow-y: scroll; height:100px;">
+                                    <div class="px-16" fxLayout="row" fxLayoutAlign="center start" *ngFor="let logItem of status_log">
+                                        <div class="h2 font-weight-300 py-8">
+                                            <div fxLayout="row" fxLayoutAlign="start start">
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    <mat-icon matSuffix class="disabled-text">access_time</mat-icon>
+                                                </div>
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    {{logItem.description}}
+                                                </div>
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    {{logItem.date|date:'medium'}}
+                                                </div>
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    {{logItem.user.name}} {{logItem.user.surname}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-------------------------------------------------------------------------------------------------------------->
+            <!------------------------------------------------('storico apertura documento')-------------------------------------------------------->
+            <!-------------------------------------------------------------------------------------------------------------->
+            <div class="page-layout carded fullwidth" style="margin-top: 5%">
+                <div class="center">
+                    <div class="content-card">
+                        <div class="toolbar px-24 py-8">
+                            <span>
+                                <mat-icon matSuffix class="disabled-text">access_time</mat-icon>
+                                Storico apertura documento
+                            </span>
+                        </div>
+                        <div class="content p-24">
+                            <div class="card-preview">
+                                <div class="fuse-card" fxFill>
+                                    <div style="overflow-y: scroll; height:100px;">
+                                        <div class="px-16" *ngFor="let logItem of view_log">
+                                            <div class="px-16" fxLayout="row" fxLayoutAlign="start start">
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    <mat-icon matSuffix class="disabled-text">access_time</mat-icon>
+                                                </div>
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    {{logItem.date|date:'medium'}}
+                                                </div>
+                                                <div class="h4 font-weight-300 py-8 pr-8">{{logItem.description}}
+                                                </div>
+                                                <div class="h4 font-weight-300 py-8 pr-8">
+                                                    {{logItem.user.name}} {{logItem.user.surname}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------------------------------------------------------------------->
+            <!------------------------------------------------('note')-------------------------------------------------------->
+            <!-------------------------------------------------------------------------------------------------------------->
+            <div class="page-layout carded fullwidth" style="margin-top: 5%">
+                <div class="center">
+                    <div class="content-card">
+                        <div class="toolbar px-24 py-8">
+                            <span><i class="material-icons">
+                                    note
+                                </i> Note
+                            </span>
+                        </div>
+                        <div class="content p-24">
+                            <mat-form-field appearance="outline" fxFill>
+                                <mat-label>Aggiungi nota</mat-label>
+                                <textarea matInput placeholder="Aggiungi" #nota></textarea>
+                                <mat-icon (click)="saveNote(nota)" matSuffix class="disabled-text">add_circle_outline
+                                </mat-icon>
+                            </mat-form-field>
+                            <table class="simple clickable">
+                                <tbody>
+                                <tr *ngFor="let option of notes">
+                                    <td class="text-left">{{option}}</td>
+                                    <td class="text-right">
+                                        <!--<mat-icon matSuffix class="disabled-text" (click)="deleteNote(option)">-->
+                                            <!--delete-->
+                                        <!--</mat-icon>-->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-------------------------------------------------------------------------------------------------------------->
+            <!------------------------------------------------('allegati')-------------------------------------------------------->
+            <!-------------------------------------------------------------------------------------------------------------->
+            <div class="page-layout carded fullwidth" style="margin-top: 5%">
+                <div class="center">
+                    <div class="content-card">
+                        <div class="toolbar px-24 py-8">
+                            <span>
+                                <mat-icon matSuffix class="disabled-text">attach_file</mat-icon>Allegati
+                            </span>
+                        </div>
+                        <div class="content p-24">
+                            <div fxLayout="column" fxLayoutAlign="space-between stretch">
+                                <!-------------------------------------------------------------------------------------------------------------->
+                                <!------------------------------------------------('allegati caricati')-------------------------------------------------------->
+                                <!-------------------------------------------------------------------------------------------------------------->
+                                <div class="card-preview" style="margin-top: 5%">
+                                    <div class="fuse-card" fxFill>
+                                        <div class="p-16">
+                                            <div class="h1 font-weight-300">
+                                                <mat-icon matSuffix class="disabled-text">save</mat-icon>
+                                                Allegati caricati
+                                            </div>
+                                        </div>
+
+                                        <table class="simple clickable">
+                                            <tr *ngFor="let file of practice_files">
+
+
+                                                <ng-container *ngIf="!file.clientFile" >
+                                                    <td class="text-left">{{file.date | date}}</td>
+                                                    <td class="text-center">{{file.name}}</td>
+                                                    <td class="text-right">
+                                                        <mat-icon (click)="downloadFile(file.name)"
+                                                                  class="s-18 pr-14 green-fg" matTooltip="scarica">
+                                                            cloud_download
+                                                        </mat-icon>
+                                                    </td>
+                                                </ng-container>
+
+
+
+                                                <ng-container *ngIf="file.clientFile">
+                                                    <td class="text-left" *ngIf="file.required"><span class="text-warning">( {{file.file ? file.file.name : 'coltativo'}} )</span></td>
+                                                    <td class="text-left" *ngIf="!file.required"><span class="text-blue-gray">{{file.file ? file.file.name : 'facoltativo'}}</span></td>
+                                                    <td class="text-center">{{file.label}}</td>
+                                                    <ng-container *ngIf="file.isUploded == 'done'">
+
+<!--                                                        <td class="text-left" *ngIf="file.required"><span class="text-warning">Ghzoan</span></td>-->
+                                                        <td class="text-right">
+                                                            <mat-icon  (click)="downloadFile(file.file.name)"
+                                                                      class="s-18 pr-14 green-fg" matTooltip="scarica">
+                                                                cloud_download
+                                                            </mat-icon>
+
+<!--                                                            <mat-icon (click)="downloadFile(file.name)"-->
+<!--                                                                      class="s-18 pr-14 red-fg" matTooltip="uploading">-->
+<!--                                                                cloud_download-->
+<!--                                                            </mat-icon>-->
+
+                                                        </td>
+                                                        <!--<td class="text-right">-->
+                                                        <!--<mat-icon (click)="deleteFile(file)" class="s-18 pr-4 red-fg"-->
+                                                        <!--matTooltip="elimina">-->
+                                                        <!--delete-->
+                                                        <!--</mat-icon>-->
+                                                        <!--</td>-->
+                                                    </ng-container>
+
+
+
+
+                                                    <ng-container *ngIf="file.isUploded == 'waiting'">
+
+                                                        <!--                                                        <td class="text-left" *ngIf="file.required"><span class="text-warning">Ghzoan</span></td>-->
+
+                                                        <td class="text-right">
+                                                            <input type="file" #client_file_input ngFileSelect (uploadOutput)="uploadClientFile($event, file, client_file_btn)" class="hidden">
+                                                            <mat-icon (click)="client_file_input.click()" #client_file_btn class="s-18 pr-14 yellow-fg" matTooltip="upload">
+                                                                cloud_upload
+                                                            </mat-icon>
+                                                        </td>
+                                                        <!--<td class="text-right">-->
+                                                        <!--<mat-icon (click)="deleteFile(file)" class="s-18 pr-4 red-fg"-->
+                                                        <!--matTooltip="elimina">-->
+                                                        <!--delete-->
+                                                        <!--</mat-icon>-->
+                                                        <!--</td>-->
+                                                    </ng-container>
+
+
+
+
+                                                    <ng-container *ngIf="!file.file">
+<!--                                                        <td class="text-left" *ngIf="file.required"><span class="text-warning">Khaled</span></td>-->
+                                                        <td class="text-right">
+                                                            <input type="file" #client_file_input ngFileSelect (uploadOutput)="uploadClientFile($event, file, client_file_btn)" class="hidden">
+                                                            <mat-icon (click)="client_file_input.click()" #client_file_btn class="s-18 pr-14 blue-fg" matTooltip="upload">
+                                                                cloud_upload
+                                                            </mat-icon>
+                                                        </td>
+                                                    </ng-container>
+
+
+                                                </ng-container>
+
+                                            </tr>
+                                        </table>
+
+                                        <div class="content p-24" *ngIf="practice.state == 'ESTIMATE_ACCEPTED'">
+                                            <mat-form-field appearance="outline" fxFill>
+                                                <mat-label>Note che riguardano gli allegati della pratica...</mat-label>
+                                                <textarea matInput placeholder="Aggiungi" #clientFilesNote></textarea>
+                                            </mat-form-field>
+                                            <button mat-raised-button color="primary" [disabled]="!can_send_to_next_status"  [class.spinner]="loading" (click)="commitClientFiles(clientFilesNote)">To the next status</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-------------------------------------------------------------------------------------------------------------->
+            <!------------------------------------------------('preventivo allegate')-------------------------------------------------------->
+            <!-------------------------------------------------------------------------------------------------------------->
+            <div class="page-layout carded fullwidth" style="margin-top: 5%">
+                <div class="center">
+                    <div class="content-card">
+                        <div class="toolbar px-24 py-8">
+                            <span>
+                                <mat-icon matSuffix class="disabled-text">access_time</mat-icon>
+                                Preventivo Allegate
+                            </span>
+                        </div>
+                        <div class="content p-24">
+
+                            <div class="card-preview mt-8" *ngFor="let offer of practice.offers">
+                                <div class="fuse-card" fxFill>
+                                    <div class="p-16">
+                                        <div class="h1 font-weight-300">
+                                            <mat-icon matSuffix class="disabled-text">save</mat-icon>
+                                            {{offer.lessor_location}}
+                                        </div>
+                                    </div>
+                                    <div class="pp-10">
+                                        <div class="h4 font-weight-300 px-16">
+                                            ID Casa locatrice : {{offer.idCasaLocatrice}}
+                                        </div>
+
+
+                                        <div class="h4 font-weight-300 px-16">
+                                            Commission : {{offer.commission}}
+                                        </div>
+
+                                        <div class="h4 font-weight-300 px-16" *ngIf="offer.note != null">
+                                            Note : {{offer.note}}
+                                        </div>
+
+                                        <div class="h4 font-weight-30 px-16">
+                                            Preventivo :
+                                            <mat-icon (click)="downloadFile(offer.file.name)" class="s-18 pr-14 red-fg" matTooltip="Preventivo">
+                                                cloud_download
+                                            </mat-icon>
+                                        </div>
+
+                                        <div class="h4 font-weight-30 px-16" *ngIf="offer.extraFile != null">
+                                            Extra file :
+                                            <mat-icon (click)="downloadFile(offer.extraFile.name)" class="s-18 pr-14 red-fg" matTooltip="Preventivo">
+                                                cloud_download
+                                            </mat-icon>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

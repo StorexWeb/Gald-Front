@@ -1,0 +1,28 @@
+<mat-card style="width:95%;margin:3% 3% 3% 3%;border-radius: 2%">
+  <mat-form-field class="px-8">
+    <mat-select id="filter_key" name="filter_key" [(ngModel)]="filterKey" (ngModelChange)="load()">
+      <mat-option *ngFor="let col of filtersQueryCols" [value]="col.key">{{col.label}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="px-8">
+    <input matInput style="margin-top: 2px" (blur)="load()" placeholder="Global Filter" [(ngModel)]="filterValue">
+  </mat-form-field>
+  <button mat-flat-button matTooltip="aggiorna tabella" class="mx-4" color="accent" (click)="load()">
+    <i class="material-icons">refresh</i>
+  </button>
+
+</mat-card>
+
+<div fxLayout="column" fxLayoutAlign="stretch" style="width: 100%" id='mytable'>
+  <div style="width:95%;margin:0 3% 0 3%;;border-radius: 2%">
+    <app-list [data]="newPractices" [displayCols]="displayCols" [actions]="actions"
+              (onAction)="runAction($event)" style="width: 100%">
+    </app-list>
+  </div>
+  <div style="width:95%;margin:0 3% 0 3%;;border-radius: 2%">
+    <mat-paginator [length]="dataSize" [pageSize]="rpp" [pageSizeOptions]="pageSizeOptions" (page)="onPaginationChange($event)"></mat-paginator>
+  </div>
+
+</div>
+

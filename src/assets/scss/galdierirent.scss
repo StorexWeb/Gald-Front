@@ -1,0 +1,31 @@
+app, .full-width {
+  width: 100% !important;
+}
+
+.mt-8{
+  margin-top: 8px !important;
+}
+.mt-5{
+  margin-top: 5px !important;
+}
+.mr-5{
+  margin-right: 5px !important;
+}
+
+// TODO remake this in a better wat !important
+.mat-option {
+  height: auto !important;
+}
+
+.text-warning {
+  color: #e09c1e;
+}
+.text-primary {
+  color: #0505ab;
+}
+.text-blue-gray {
+  color: #607D8B;
+}
+.hidden{
+  display: none;
+}

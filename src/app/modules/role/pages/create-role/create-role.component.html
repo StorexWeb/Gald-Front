@@ -1,0 +1,39 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+  <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Crea un nuovo ruolo</span>
+      </div>
+      <div class="h1 mt-16">Modulo di ruolo</div>
+    </div>
+  </div>
+
+  <div class="content p-24">
+
+
+    <div class="vertical-stepper-wrapper">
+
+      <form fxLayout="column">
+
+        <ng-template matStepLabel>Cliente</ng-template>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" >
+            <mat-label>ID contratto della casa locatrice</mat-label>
+            <input type="text" matInput placeholder="ID contratto" formControlName="deal" name="deal">
+            <mat-icon matSuffix class="disabled-text">mode_edit</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

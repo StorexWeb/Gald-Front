@@ -1,0 +1,106 @@
+
+<div style="overflow-x: auto;">
+  <!--<table mat-table [dataSource]="data" multiTemplateDataRows class="mat-elevation-z8">-->
+
+  <!--    <ng-container matColumnDef="{{column}}" *ngFor="let column of displayCols.keys; let idx = index">-->
+
+  <!--        <th mat-header-cell *matHeaderCellDef> {{displayCols.labels[idx]}}</th>-->
+
+  <!--        <td style="padding-right: 10px;" mat-cell *matCellDef="let element" (click)="viewDetails(element)">-->
+
+  <!--            <ng-container *ngIf="displayCols.format && getTypeOf(displayCols.format[column]) == 'function'; else printNormal">-->
+  <!--                {{displayCols.format[column](element[column])}}-->
+  <!--            </ng-container>-->
+
+  <!--            <ng-template #printNormal>{{element[column]}}</ng-template>-->
+
+
+  <!--        </td>-->
+  <!--    </ng-container>-->
+
+
+  <!--    <ng-container matColumnDef="{{column.key}}" *ngFor="let column of displayCols; let idx = index">-->
+
+  <!--        <th mat-header-cell *matHeaderCellDef> {{column.key}}</th>-->
+
+  <!--        <td style="padding-right: 10px;" mat-cell *matCellDef="let element" (click)="viewDetails(element)">-->
+
+  <!--            <ng-container *ngIf="column.type == 1; else printNormal">-->
+  <!--                {{column.value(element[column.key])}}-->
+  <!--            </ng-container>-->
+
+  <!--            <ng-template #printNormal>{{element[column.key]}}</ng-template>-->
+
+
+  <!--        </td>-->
+  <!--    </ng-container>-->
+
+
+  <!--    <ng-container matColumnDef="expandedDetail">-->
+  <!--        <td mat-cell *matCellDef="let element" [attr.colspan]="displayCols.length">-->
+  <!--            <div class="element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">-->
+
+  <!--            </div>-->
+  <!--        </td>-->
+  <!--    </ng-container>-->
+
+  <!--    <tr mat-header-row *matHeaderRowDef="displayCols"></tr>-->
+  <!--    <tr mat-row *matRowDef="let element; columns: displayCols[0].key;" class="example-element-row"-->
+  <!--        [class.expanded-row]="expandedElement === element"-->
+  <!--        (click)="expandedElement = expandedElement === element ? null : element"></tr>-->
+  <!--    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>-->
+  <!--</table>-->
+
+
+  <table class="mat-table">
+
+    <thead>
+
+    <tr class="mat-row">
+      <th class="mat-tab-header" *ngFor="let header of displayCols">
+        {{header.key}}
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <div class="dd " *ngFor="let item of data; let i = index">
+
+      <tr  class="mat-row">
+        <td class="mat-cell" *ngFor="let value of displayCols;" (click)="checkIsExpanded(item, i)">
+
+          <p *ngIf="value.type == 1;  else onlyValue" class="a" (click)="checkIsExpanded(item, i)">
+            {{value.value(item[value.key])}}
+          </p>
+          <!--                        {{item[value.key]}}-->
+
+          <ng-template #onlyValue>{{item[value.key]}} </ng-template>
+        </td>
+
+
+      </tr>
+
+
+      <!--                <div *ngIf="isExpanded[i]" class="det">-->
+
+      <div  fxLayout="column"  *ngIf="isExpanded[i]" class="det">
+
+        <app-actions [list]="actions" [element]="item"
+                     (onAction)="onActionEvent($event, item._id)" style="width: 330%"></app-actions>
+
+        <app-details [dataSource]="details" style="display: inline-grid; width: 330%"></app-details>
+      </div>
+
+
+      <!--                </div>-->
+
+
+    </div>
+
+    </tbody>
+
+
+  </table>
+
+</div>

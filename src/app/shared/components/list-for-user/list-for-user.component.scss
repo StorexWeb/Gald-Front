@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+}
+
+tr {
+  padding: 0;
+  margin: 0;
+}
+
+
+p{
+  padding: 0;
+  margin: 0;
+}
+
+.mat-table{
+  display: inline-grid;
+}
+
+
+.mat-tab-header{
+  padding: 30px;
+  margin: 10px;
+  text-align: center;
+  width: 10%;
+}
+
+.mat-cell{
+  width: 10%;
+
+  padding: 30px;
+  margin: 10px;
+  text-align: center;
+}
+
+.det{
+  margin: 0;
+  padding: 0;
+  width: 330%;
+
+}
+
+
+
+.dd, tbody{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+

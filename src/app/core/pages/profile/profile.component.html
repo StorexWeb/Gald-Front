@@ -1,0 +1,75 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+    <!--------------------------------------------------------------------------------------------->
+    <!--------------------------------------------('header')------------------------------------------->
+    <!--------------------------------------------------------------------------------------------->
+    <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="secondary-text s-18">home</mat-icon>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text">Nuovo utente</span>
+            </div>
+            <!---->
+            <div class="h1 mt-16">
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+<!--                    <input (click)="changeImage()" type="image" [src]="url_image" name="image" width="140" height="100">-->
+                    <input class="user-img-input" (click)="changeImage()" type="image" [src]="url_image" name="image" width="140" height="100">
+
+                    Utente
+
+                    <input #imageInput style="display: none;" type="file" ngFileSelect  (uploadOutput)="onUploadOutput($event)">
+
+
+                    <!--                    <input #imageInput style="display: none;" type="file" ngFileSelect (uploadOutput)="onUploadOutput($event)">-->
+                </div>
+
+<!--                <input type="file" (change)="onUploadOutput($event)" multiple>-->
+            </div>
+        </div>
+    </div>
+    <form fxLayout="column" class="pr-4 pl-4 pt-2" [formGroup]="profileForm">
+        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Password" formControlName="password" #password>
+                <mat-error *ngIf="password">
+                    Password obbligatorio
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="nome" formControlName="name" #nome>
+                <mat-error *ngIf="nome">
+                    Nome obbligatorio
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                <mat-label>Cognome</mat-label>
+                <input matInput placeholder="cognome" formControlName="surname" #cognome>
+                <mat-error *ngIf="cognome">
+                    Cognome obbligatorio
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                <mat-label>Cellulare</mat-label>
+                <input matInput pattern="[0-9]*" placeholder="cellulare" formControlName="mobile" #cellulare>
+                <mat-error *ngIf="cellulare">
+                    Cellulare non valido
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                <mat-label>Telefono</mat-label>
+                <input matInput pattern="[0-9]*" placeholder="telefono" formControlName="phone" #telefono>
+                <mat-error *ngIf="telefono">
+                    Telefono non valido
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!this.profileForm.valid" (click)="submit()">Salve</button>
+    </form>
+
+</div>

@@ -1,0 +1,28 @@
+.submit-button{
+  width: 100px;
+  background-color: #29ab29 !important;
+  color: white !important;
+  float: right !important;
+}
+.add-offer-button{
+  width: 100px;
+  float: right !important;
+}
+.clear-both {
+  clear: both;
+}
+.action-buttons-container{
+  padding: 10px;
+}
+.offer-card {
+  margin-top: 10px;
+}
+.flex-1{
+  flex: 1;
+}
+.delete-offer{
+  cursor: pointer;
+}
+.delete-offer:hover {
+  color: red;
+}

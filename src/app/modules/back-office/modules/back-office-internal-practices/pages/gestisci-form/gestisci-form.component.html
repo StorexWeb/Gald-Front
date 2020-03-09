@@ -1,0 +1,222 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+  <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="column" fxLayoutAlign="center start">
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <mat-icon class="secondary-text s-18">home</mat-icon>
+        <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+        <span class="secondary-text">Crea un accordo finale</span>
+      </div>
+      <div class="h1 mt-16">Accordo finale</div>
+    </div>
+  </div>
+
+  <div class="content p-24">
+    <div class="h1 pt-48">
+      Richiesta di accordo finale
+    </div>
+    <p class="pb-32">
+      Questo modulo consente di inserire una nuova richiesta per un accordo finale
+    </p>
+
+
+
+    <div class="vertical-stepper-wrapper">
+
+      <form fxLayout="column" [formGroup]="verticalStepperStep1">
+
+        <ng-template matStepLabel>Cliente</ng-template>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>ID contratto della casa locatrice</mat-label>
+            <input type="text" matInput placeholder="ID contratto" formControlName="deal" name="deal">
+            <mat-icon matSuffix class="disabled-text">mode_edit</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Veicolo</mat-label>
+            <input type="text" matInput placeholder="Veicolo" formControlName="veicolo" name="veicolo" required>
+            <mat-icon matSuffix class="disabled-text">directions_car</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Cliente</mat-label>
+            <input type="text" matInput placeholder="Cliente" formControlName="client" name="client" required>
+            <mat-icon matSuffix class="disabled-text">person</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Telaio</mat-label>
+            <input type="text" matInput placeholder="Telaio" formControlName="frame" name="frame" required>
+            <mat-icon matSuffix class="disabled-text">directions_car</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Targa</mat-label>
+            <input type="text" matInput placeholder="Targa" formControlName="licensePlate" name="licensePlate" required>
+            <mat-icon matSuffix class="disabled-text">directions_car</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Data invio provvigione</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="sendingDate" name="sendingDate" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Data richiesta</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="requestDate" name="requestDate" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Attesa immatricolazionw(amm.)</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="pendingRegistration" name="pendingRegistration" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Data immatricolazionw</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="registrationDate" name="registrationDate" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Data richiesta kit di bordo</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="boardRequestDate" name="boardRequestDate" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+
+        </div>
+
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Richiesta messa a disposizione</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="requestMadeAvailable" name="requestMadeAvailable" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Data consegna</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="deliveryDate" name="deliveryDate" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Sconto</mat-label>
+            <input type="number" matInput placeholder="Sconto" formControlName="disCount" name="disCount" required>
+            <mat-icon matSuffix class="disabled-text">transit_enterexit</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Note</mat-label>
+            <textarea  matInput placeholder="Note" formControlName="note" name="note"></textarea>
+            <mat-icon matSuffix class="disabled-text">note</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Venditore</mat-label>
+            <input type="text" matInput placeholder="Venditore" formControlName="seller" name="seller" required>
+            <mat-icon matSuffix class="disabled-text">person</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Casa locatrice</mat-label>
+            <input type="text" matInput placeholder="Casa locatrice" formControlName="ownerHouse" name="ownerHouse" required>
+            <mat-icon matSuffix class="disabled-text">person</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="1 0 auto" fxLayout="row" class="fg">
+
+          <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+            <mat-label>Data consegna cartellina in amm</mat-label>
+            <input type="date" matInput placeholder="DD/MM/YYY" formControlName="folderDeliveryDate" name="folderDeliveryDate" required>
+            <mat-icon matSuffix class="disabled-text">date_range</mat-icon>
+            <mat-error>Devi inserire questo campo!</mat-error>
+          </mat-form-field>
+        </div>
+
+
+
+
+
+
+
+
+        <div fxLayout="row" fxLayoutAlign="left left" style="text-align: end; padding-right: 15px">
+
+          <button mat-raised-button type="button" color="accent" (click)="save()" [disabled]="!verticalStepperStep1.valid" style="margin-right: 10px">
+            Salva in practice
+          </button>
+
+          <button  *ngIf="from==1"  mat-raised-button type="button" color="accent" (click)="toNextState()" [disabled]="!saved">
+            Ho  inviato i ordine
+          </button>
+        </div>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

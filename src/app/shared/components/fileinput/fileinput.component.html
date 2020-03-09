@@ -1,0 +1,62 @@
+<!-------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------('input file')-------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------->
+<div class="card-preview">
+    <div class="fuse-card" fxFill>
+        <div class="p-16">
+            <div class="h1 font-weight-300">
+                <mat-icon matSuffix class="disabled-text">save</mat-icon>
+                Inserisci file
+            </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div fxFlex="50" style="margin:3% 3% 3% 3%">
+                <div class="example-box" ngFileDrop [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
+                    <h2>Trascina qui i tuoi file</h2>
+                </div>
+            </div>
+            <div fxFlex="50">
+                <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 10px;margin-bottom: 10px">
+                    <input *ngIf="!multiple" type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+                    <input *ngIf="multiple" type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------('alelegati in attesa di caricamento')-------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------->
+<div class="card-preview" style="margin-top: 5%">
+    <div class="fuse-card" fxFill>
+        <div class="p-16">
+            <div class="h1 font-weight-300">
+                <mat-icon matSuffix class="disabled-text">access_time</mat-icon>
+                Allegati in attesa di caricamento
+            </div>
+        </div>
+
+        <table class="simple clickable">
+            <tbody>
+                <tr *ngFor="let file of files">
+                    <td class="text-left">{{ file.name }}</td>
+                    <td class="text-right">
+                        <mat-icon  *ngIf="deleted" (click)="removeFile(file.id)" class="s-18 pr-4 red-fg">
+                            delete
+                        </mat-icon>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ng-container *ngIf="save_btn">
+            <div class="card-divider mb-0"></div>
+            <div class="px-16" fxLayout="row" fxLayoutAlign="space-between center" >
+                <button mat-button color="accent" (click)="save()">SALVA FILE</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

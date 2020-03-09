@@ -1,0 +1,291 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+    <!--------------------------------------------------------------------------------------------->
+    <!--------------------------------------------('header')------------------------------------------->
+    <!--------------------------------------------------------------------------------------------->
+    <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
+        <div fxLayout="column" fxLayoutAlign="center start">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="secondary-text s-18">home</mat-icon>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text">Nuvo cliente</span>
+            </div>
+            <div class="h1 mt-16">Cliente</div>
+        </div>
+    </div>
+
+    <div class="content p-24">
+        <div class="h1 pt-48">
+            Nuovo cliente
+        </div>
+        <p class="pb-32">
+            Questo form ti permette di creare un nuovo cliente
+        </p>
+        <div class="vertical-stepper-wrapper">
+            <mat-vertical-stepper class="mat-elevation-z4" [linear]="true" #stepper>
+                <!------------------------------------------------------------------------------------------------------------------------>
+                <!------------------------------------------------('dati account')-------------------------------------------------------->
+                <!------------------------------------------------------------------------------------------------------------------------>
+                <mat-step [stepControl]="verticalStepperStep_account">
+                    <form fxLayout="column" [formGroup]="verticalStepperStep_account">
+                        <ng-template matStepLabel>Dati cliente</ng-template>
+
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Email</mat-label>
+                                <input matInput placeholder="Email" formControlName="email" #email>
+                                <mat-error *ngIf="email">
+                                    Email non valida
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Tipologia cliente</mat-label>
+                                <mat-select formControlName="client_type" #client_type
+                                    placeholder="Tipologia cliente">
+                                    <mat-option value="Persona fisica">Persona fisica</mat-option>
+                                    <mat-option value="Ditta Individuale/Libero Professionista">Ditta Individuale/Libero
+                                        Professionista
+                                    </mat-option>
+                                    <mat-option value="Società di persone">Società di persone</mat-option>
+                                    <mat-option value="Società di capitale">Società di capitale</mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="client_type">
+                                    Tipologia Cliente obbligatorio
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Avanti
+                            </button>
+                        </div>
+                    </form>
+                </mat-step>
+                <!------------------------------------------------------------------------------------------------------------------------->
+                <!------------------------------------------------('dati personali')-------------------------------------------------------->
+                <!-------------------------------------------------------------------------------------------------------------------------->
+                <mat-step [stepControl]="verticalStepperStep_personali">
+                    <form fxLayout="column" [formGroup]="verticalStepperStep_personali">
+                        <ng-template matStepLabel>Dati personali</ng-template>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Nome</mat-label>
+                                <input matInput placeholder="nome" formControlName="name" #name>
+                                <mat-error *ngIf="name">
+                                    Nome obbligatorio
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Cogname</mat-label>
+                                <input matInput placeholder="cognome" formControlName="surname" #surname>
+                                <mat-error *ngIf="surname">
+                                    Cogname obbligatorio
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Cellulare</mat-label>
+                                <input matInput placeholder="cellulare" formControlName="mobile" #mobile>
+                                <mat-error *ngIf="mobile">
+                                    Cellulare non valido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Codice fiscale</mat-label>
+                                <input matInput placeholder="Codice fiscale" formControlName="cf" #cf>
+                                <mat-error *ngIf="cf">
+                                    Codice fiscale non valido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Titolo</mat-label>
+                                <input matInput placeholder="Titolo" formControlName="title" #title>
+                                <mat-error *ngIf="title">
+                                    Titolo non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Indirizzo</mat-label>
+                                <input matInput placeholder="indirizzo" formControlName="address" #address>
+                                <mat-error *ngIf="address">
+                                    Indirizzo non valido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Cap</mat-label>
+                                <input matInput placeholder="Cap" formControlName="cap" #cap>
+                                <mat-error *ngIf="cap">
+                                    Cap non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Provincia</mat-label>
+                                <input type="text" placeholder="province" aria-label="Number" matInput
+                                    formControlName="province" [matAutocomplete]="auto" #province
+                                    (blur)="validateProvincia($event)" name="province">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let option of filteredProvince | async" [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                                <mat-error *ngIf="province">
+                                    Provincia non valida
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Comune</mat-label>
+                                <input type="text" placeholder="comune" aria-label="Number" matInput
+                                    formControlName="common" [matAutocomplete]="autoC" #common
+                                    (blur)="validateComune($event)" name="common">
+                                <mat-autocomplete #autoC="matAutocomplete">
+                                    <mat-option *ngFor="let optionC of filteredComuni | async" [value]="optionC">
+                                        {{optionC}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                                <mat-error *ngIf="common">
+                                    Comune non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                                Indietro
+                            </button>
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Avanti
+                            </button>
+                        </div>
+                    </form>
+                </mat-step>
+                <!--------------------------------------------------------------------------------------------->
+                <!--------------------------------('dati aziendali')------------------------------------------->
+                <!--------------------------------------------------------------------------------------------->
+                <mat-step [stepControl]="verticalStepperStep_aziendali" *ngIf="hidden_dati_aziendali">
+                    <form fxLayout="column" [formGroup]="verticalStepperStep_aziendali">
+                        <ng-template matStepLabel>Dati aziendali</ng-template>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Azienda</mat-label>
+                                <input matInput placeholder="Azienda" formControlName="company" #company>
+                                <mat-error *ngIf="company">
+                                    Azienda non valido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                                <mat-label>Regione Sociale</mat-label>
+                                <input matInput placeholder="Regione sociale" formControlName="regionesociale"
+                                    #regionesociale>
+                                <mat-error *ngIf="regionesociale">
+                                    Regione Sociale non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                <mat-label>Partita iva</mat-label>
+                                <input matInput placeholder="Partita iva" formControlName="piva" #piva>
+                                <mat-error *ngIf="piva">
+                                    Piva non valido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Telefono</mat-label>
+                                <input matInput placeholder="telefono" formControlName="phone" #phone>
+                                <mat-error *ngIf="phone">
+                                    Telefono non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <!-------------------------------------------------------------------------------------------------------------->
+                        <!------------------------------------------------('address aziendali')-------------------------------------------------------->
+                        <!-------------------------------------------------------------------------------------------------------------->
+
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Indirizzo</mat-label>
+                                <input matInput placeholder="Indirizzo" formControlName="address"
+                                    #address_aziendali>
+                                <mat-error *ngIf="address_aziendali">
+                                    Indirizzo non valido
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Cap</mat-label>
+                                <input matInput placeholder="Cap" formControlName="cap" #cap_aziendali>
+                                <mat-error *ngIf="cap_aziendali">
+                                    Cap non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Provincia</mat-label>
+                                <input type="text" placeholder="provincia" aria-label="Number" matInput
+                                    formControlName="province" [matAutocomplete]="auto_aziendali"
+                                    (blur)="validateProvincia($event)" #province_aziendali name="province_aziendali">
+                                <mat-autocomplete #auto_aziendali="matAutocomplete">
+                                    <mat-option *ngFor="let option of filteredProvince_aziendali | async"
+                                        [value]="option">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                                <mat-error *ngIf="province_aziendali">
+                                    Provincia non valida
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                                <mat-label>Comune</mat-label>
+                                <input type="text" placeholder="common" aria-label="Number" matInput
+                                    formControlName="common" [matAutocomplete]="autoC_aziendali" #common_aziendali
+                                    name="common_aziendali" (blur)="validateComune($event)">
+                                <mat-autocomplete #autoC_aziendali="matAutocomplete">
+                                    <mat-option *ngFor="let optionC_aziendali of filteredComuni_aziendali | async"
+                                        [value]="optionC_aziendali">
+                                        {{optionC_aziendali}}
+                                    </mat-option>
+                                </mat-autocomplete>
+                                <mat-error *ngIf="common_aziendali">
+                                    Comune non valido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                            <mat-slide-toggle formControlName="inizioattivita" #inizioattivita>Inizio attività
+                            </mat-slide-toggle>
+                            <mat-error *ngIf="inizioattivita==null">
+                                Inizio attivita obbligatorio
+                            </mat-error>
+                        </div>
+
+                    </form>
+                </mat-step>
+                <!--------------------------------------------------------------------------------------------->
+                <!--------------------------------('Final stepper')------------------------------------------->
+                <!--------------------------------------------------------------------------------------------->
+                <mat-step>
+                    <ng-template matStepLabel>Fine</ng-template>
+                    <div class="h2 m-16" fxLayout="row" fxLayoutAlign="center center">
+                        Il form può essere inviato.
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                            Indietro
+                        </button>
+                        <button mat-raised-button type="button" color="accent" (click)="finishVerticalStepper()">
+                            Fine
+                        </button>
+                    </div>
+                </mat-step>
+            </mat-vertical-stepper>
+        </div>
+    </div>
+</div>
