@@ -69,7 +69,7 @@
         "lodash": "^4.17.15",
         "mdbootstrap": "^4.11.0",
         "moment": "2.23.0",
-        "mongoose": "^5.5.13",
+        "mongoose": "^5.7.5",
         "ng2-charts": "1.6.0",
         "ngrx-store-freeze": "0.2.4",
         "ngx-color-picker": "7.3.0",
